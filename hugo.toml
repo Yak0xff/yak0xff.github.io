@@ -37,7 +37,7 @@ copyright = '本文由 Yak 创作，采用 知识共享署名4.0 国际许可协
 [params]
 mainSections = ["posts"]
 headTitle = "Yak Weekly"
-# disqus = "joway" # disqus account name
+disqus = "https-zycslog-github-io" # disqus account name
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-M8T8CVMP"></script>'
 Description = 'Log something weekly, want you can be happy.'
 favicon = 'https://airing.ursb.me/image/favicon.ico'
