@@ -1,4 +1,4 @@
-baseURL = 'https://weekly.ursb.me/'
+baseURL = 'https://yak0xff.github.io'
 languageCode = 'en-us'
 title = 'Yak Weekly'
 theme = "yinyang"
