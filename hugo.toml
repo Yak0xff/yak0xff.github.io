@@ -1,0 +1,57 @@
+baseURL = 'https://weekly.ursb.me/'
+languageCode = 'en-us'
+title = 'Yak Weekly'
+theme = "yinyang"
+DefaultContentLanguage = "cn"
+copyright = '本文由 Yak 创作，采用 知识共享署名4.0 国际许可协议进行许可'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'xcode'
+    tabWidth = 4
+
+[params.author.name]
+  name = "Yak"
+  homepage = "https://yak0xff.github.io"
+
+[languages]
+  [languages.cn]
+    contentDir = "content/cn"
+    languageName = "Chinese"
+    weight = 1
+
+[params]
+mainSections = ["posts"]
+headTitle = "Yak Weekly"
+# disqus = "joway" # disqus account name
+# extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLCV35V6XX"></script>'
+Description = 'Log something weekly, want you can be happy.'
+favicon = 'https://airing.ursb.me/image/favicon.ico'
+twitterCards = true
+postHeaderContent = ""
+postFooterContent = "<br/><br/><p>Subscribe <a target='_blank' href='https://yak0xff.github.io/index.xml'>Yak's Weekly</a></p><p>无知和弱小不是生存的障碍，傲慢才是。</p>"
+extraCSSFiles = []
+
+[[params.socials]]
+name = "RSS"
+link = "https://yak0xff.github.io/index.xml"
+[[params.socials]]
+name = "About Me"
+link = "https://yak0xff.github.io/about.html"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/yak0xff"
