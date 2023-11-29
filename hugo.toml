@@ -40,7 +40,7 @@ headTitle = "Yak Weekly"
 disqus = "https-zycslog-github-io" # disqus account name
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-M8T8CVMP"></script>'
 Description = 'Log something weekly, want you can be happy.'
-favicon = 'https://airing.ursb.me/image/favicon.ico'
+favicon = '/image/favicon.ico'
 twitterCards = true
 postHeaderContent = ""
 postFooterContent = "<br/><br/><p>Subscribe <a target='_blank' href='/index.xml'>Yak's Weekly</a></p><p>无知和弱小不是生存的障碍，傲慢才是。</p>"
