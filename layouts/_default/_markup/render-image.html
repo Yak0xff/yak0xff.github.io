@@ -1,0 +1,17 @@
+
+<style>
+    .img-desc {
+        font-size: 14px; 
+        color: #57606a;
+    } 
+</style> 
+
+
+<div class="page-content markdown-body">
+    <div class="row gallery"> 
+      <div class="col-xs-12 gallery-img">
+        <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+        <span class="img-desc">{{ .Title }}</span>
+      </div> 
+    </div>
+  </div>
