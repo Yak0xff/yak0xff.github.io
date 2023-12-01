@@ -1,15 +1,20 @@
 
-<style>
+<style> 
     .img-desc {
         font-size: 14px; 
         color: #57606a;
     } 
+
+    .video-container { 
+      display: block;
+      margin: 0 auto;
+    }
 </style> 
 
 
 <div class="page-content markdown-body">
     <div class="row gallery"> 
-      <div class="col-xs-12 gallery-img">
+      <div class="container col-xs-10 gallery-img">
         <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
         <span class="img-desc">{{ .Title }}</span>
       </div> 

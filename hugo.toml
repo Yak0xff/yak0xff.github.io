@@ -30,7 +30,7 @@ copyright = '本文由 Yak 创作，采用 知识共享署名4.0 国际许可协
 
 [languages]
   [languages.cn]
-    contentDir = "content/cn"
+    contentDir = "content"
     languageName = "Chinese"
     weight = 1
 
