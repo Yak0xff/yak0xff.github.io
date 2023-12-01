@@ -1,5 +1,5 @@
 +++
-title = 'YK.1 坐着等待不如走着看天'
+title = 'YK.1 为什么又又又在折腾小站'
 date = 2023-12-01T11:24:04+08:00
 categories = ['随笔']
 draft = false
