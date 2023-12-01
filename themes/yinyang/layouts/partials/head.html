@@ -1,0 +1,133 @@
+<head>
+  <meta charset="utf-8" />
+  {{ hugo.Generator }}
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="{{ .Site.Author.name }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  {{- if .Site.Params.staticPrefix -}}
+  <link rel="dns-prefetch" href="{{ .Site.Params.staticPrefix }}" />
+  {{- end -}}
+
+  {{- if .Site.Params.favicon -}}
+  <link rel="apple-touch-icon" href="{{ .Site.Params.favicon }}" />
+  <link rel="icon" href="{{ .Site.Params.favicon }}" />
+  <link rel="shortcut" href="{{ .Site.Params.favicon }}" />
+  {{- end -}}
+  <link rel="alternate" type="application/atom+xml" href="{{.Site.BaseURL}}index.xml" title="{{ .Site.Title }}">
+
+  {{ partial "seo" . }}
+
+  {{- if .IsHome -}}
+  <title>{{ .Site.Title }}</title>
+  <meta property="og:title" content="{{ .Site.Title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="{{ .Site.Params.description }}" />
+  <meta name="description" content="{{ .Site.Params.description }}" />
+  {{- else -}}
+  <title>{{ .Title }}</title>
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="{{ default .Summary .Description | plainify }}" />
+  <meta name="description" content="{{ default .Summary .Description | plainify }}" />
+  {{- end }}
+  <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+  {{- if .Params.album -}}
+  <meta property="og:image" content="{{ .Params.album }}" />
+  {{- else -}}
+  <meta property="og:image" content="{{ .Site.Params.favicon }}" />
+  {{ end }}
+
+  {{ with resources.Get "css/index.css" | minify }}
+    <style>{{ .Content | safeCSS }}</style>
+  {{ end }}
+  {{ with resources.Get "css/pygments.css" | minify }}
+    <style>{{ .Content | safeCSS }}</style>
+  {{ end }}
+  {{ with resources.Get "css/flexboxgrid-6.3.1.min.css" | minify }}
+    <style>{{ .Content | safeCSS }}</style>
+  {{ end }}
+
+  {{ range .Site.Params.extraCSSFiles -}}
+  <link rel="stylesheet" href="{{ $.Site.Params.staticPrefix }}{{ . | relURL }}">
+  {{- end }}
+
+  <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml"
+    title="{{ .Site.Title }}">
+  <!-- fonts -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet"> -->
+
+
+  <style>
+    /* latin-ext */
+    @font-face {
+      font-family: 'Bree Serif';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/BreeSerif-Regular.ttf?max_age=25920000) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Bree Serif';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/BreeSerif-Regular.ttf?max_age=25920000) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* Han */
+    @font-face {
+      font-family: 'LXGW WenKai GB';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/LXGWWenKaiGB-Regular.ttf?max_age=25920000) format('woff2');
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Bungee Shade';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/BungeeShade-Regular.ttf?max_age=25920000) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Bungee Shade';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/BungeeShade-Regular.ttf?max_age=25920000) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Bungee Shade';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://yak0xff.github.io/fonts/BungeeShade-Regular.ttf?max_age=25920000) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+
+  <!-- quicklink require -->
+  <!-- <script>
+    /* Disable minification (remove `.min` from URL path) for more info 
+    https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver
+    */
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script> -->
+
+  {{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
+  {{ .Site.Params.extraHead | safeHTML }}
+
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RLCV35V6XX');
+  </script>
+</head>
